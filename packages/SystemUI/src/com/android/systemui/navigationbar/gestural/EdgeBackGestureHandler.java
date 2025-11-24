@@ -1071,6 +1071,11 @@ public class EdgeBackGestureHandler {
             return false;
         }
 
+        // prevent triggering back gestures on the top 40% of the screen
+        if (y < (mDisplaySize.y * 40 / 100)) {
+            return false;
+        }
+
         int app = -1;
         if (mVocab != null) {
             app = mVocab.getOrDefault(mPackageName, -1);
