@@ -35038,6 +35038,7 @@ public class View implements Drawable.Callback, KeyEvent.Callback,
     }
 
     private float convertVelocityToFrameRate(float velocityPps) {
+/*
         float density = mAttachInfo.mDensity;
 
         if (frameRateMappingApi()) {
@@ -35068,6 +35069,8 @@ public class View implements Drawable.Callback, KeyEvent.Callback,
             frameRate = 60f; // Use minimum frame rate when motion is very slow
         }
         return frameRate;
+*/
+        return MAX_FRAME_RATE;
     }
 
     /**
