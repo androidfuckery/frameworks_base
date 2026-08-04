@@ -15,3 +15,8 @@
 LOCAL_PATH := frameworks/base/data/sounds
 
 $(call inherit-product, $(LOCAL_PATH)/AudioPackage14.mk)
+
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.config.ringtone=Pyxis.ogg \
+    ro.config.notification_sound=Iapetus.ogg \
+    ro.config.alarm_alert=Helium.ogg
