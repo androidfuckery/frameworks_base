@@ -43,6 +43,7 @@ import android.service.autofill.SaveInfo;
 import android.text.TextUtils;
 import android.util.ArrayMap;
 import android.util.ArraySet;
+import android.util.Log;
 import android.util.Slog;
 import android.util.SparseArray;
 import android.view.Display;
@@ -74,7 +75,7 @@ public final class Helper {
      * {@code cmd autofill set log_level debug} or through
      * {@link android.provider.Settings.Global#AUTOFILL_LOGGING_LEVEL}.
      */
-    public static boolean sDebug = true;
+    public static boolean sDebug = Log.isLoggable(TAG, Log.DEBUG);
 
     /**
      * Defines a logging flag that can be dynamically changed at runtime using

@@ -49,9 +49,8 @@ public class TileServiceManager {
     private static final long MIN_BIND_TIME = 5000;
     private static final long UNBIND_DELAY = 30000;
 
-    public static final boolean DEBUG = true;
-
     private static final String TAG = "TileServiceManager";
+    public static final boolean DEBUG = Log.isLoggable(TAG, Log.DEBUG);
 
     @VisibleForTesting
     static final String PREFS_FILE = "CustomTileModes";

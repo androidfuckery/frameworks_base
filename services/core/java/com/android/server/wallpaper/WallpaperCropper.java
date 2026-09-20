@@ -39,6 +39,7 @@ import android.graphics.Rect;
 import android.os.FileUtils;
 import android.os.SELinux;
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.Slog;
 import android.util.SparseArray;
 import android.view.DisplayInfo;
@@ -66,7 +67,7 @@ public class WallpaperCropper {
 
     private static final String TAG = WallpaperCropper.class.getSimpleName();
     private static final boolean DEBUG = false;
-    private static final boolean DEBUG_CROP = true;
+    private static final boolean DEBUG_CROP = DEBUG;
 
     /**
      * Maximum acceptable parallax.
