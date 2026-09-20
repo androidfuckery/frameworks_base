@@ -23,6 +23,7 @@ import android.annotation.SystemApi;
 import android.net.LinkProperties;
 import android.os.RemoteException;
 import android.telephony.data.DataService.DataServiceProvider;
+import android.util.Log;
 
 import com.android.telephony.Rlog;
 
@@ -42,7 +43,7 @@ public class DataServiceCallback {
 
     private static final String TAG = DataServiceCallback.class.getSimpleName();
 
-    private static final boolean DBG = true;
+    private static final boolean DBG = Log.isLoggable(TAG, Log.DEBUG);;
 
     /**
      * Result of data requests

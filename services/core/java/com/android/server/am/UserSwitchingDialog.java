@@ -41,6 +41,7 @@ import android.os.SystemProperties;
 import android.os.Trace;
 import android.os.UserHandle;
 import android.os.UserManager;
+import android.util.Log;
 import android.util.Slog;
 import android.util.TypedValue;
 import android.view.View;
@@ -70,7 +71,7 @@ class UserSwitchingDialog extends Dialog {
 
     // User switching doesn't happen that frequently, so it doesn't hurt to have it always on
     @SuppressWarnings("DebugTrue")
-    protected static final boolean DEBUG = true;
+    protected static final boolean DEBUG = Log.isLoggable(TAG, Log.DEBUG);
 
     private static final long DIALOG_SHOW_HIDE_ANIMATION_DURATION_MS = 100;
     private volatile boolean mDisableAnimations;

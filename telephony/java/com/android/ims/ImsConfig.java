@@ -23,6 +23,7 @@ import android.telephony.ims.ImsReasonInfo;
 import android.telephony.ims.ProvisioningManager;
 import android.telephony.ims.aidl.IImsConfig;
 import android.telephony.ims.aidl.IImsConfigCallback;
+import android.util.Log;
 
 import com.android.internal.telephony.util.HandlerExecutor;
 import com.android.telephony.Rlog;
@@ -41,7 +42,7 @@ import java.util.concurrent.Executor;
 @Deprecated
 public class ImsConfig {
     private static final String TAG = "ImsConfig";
-    private boolean DBG = true;
+    private boolean DBG = Log.isLoggable(TAG, Log.DEBUG);;
     private final IImsConfig miConfig;
 
     /**

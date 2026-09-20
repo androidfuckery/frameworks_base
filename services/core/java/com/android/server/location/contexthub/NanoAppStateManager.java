@@ -46,7 +46,7 @@ import java.util.function.Consumer;
     /*
      * Enables verbose debug logs for this class.
      */
-    private static final boolean ENABLE_LOG_DEBUG = true;
+    private static final boolean ENABLE_LOG_DEBUG = Log.isLoggable(TAG, Log.DEBUG);
 
     /*
      * Service cache maintaining of handle to nanoapp infos.

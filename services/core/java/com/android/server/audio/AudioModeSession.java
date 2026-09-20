@@ -37,6 +37,7 @@ import android.media.audio.IAudioModeSession;
 import android.media.audio.IAudioModeSessionCallback;
 import android.os.Binder;
 import android.os.Build;
+import android.util.Log;
 import android.util.Slog;
 
 import com.android.internal.annotations.GuardedBy;
@@ -62,7 +63,7 @@ public final class AudioModeSession extends IAudioModeSession.Stub {
     private static final String TAG = "AudioModeSession";
 
     @SuppressLint("DebugTrue")
-    private static final boolean DEBUG = true;
+    private static final boolean DEBUG = Log.isLoggable(TAG, Log.DEBUG);
 
     private static final AudioAttributes CALL_AUDIO_ATTRIBUTES = new AudioAttributes.Builder()
             .setUsage(AudioAttributes.USAGE_VOICE_COMMUNICATION)

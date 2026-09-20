@@ -55,6 +55,7 @@ import android.util.ArrayMap;
 import android.util.ArraySet;
 import android.util.DebugUtils;
 import android.util.IndentingPrintWriter;
+import android.util.Log;
 import android.util.Pair;
 import android.util.Patterns;
 import android.util.Range;
@@ -110,7 +111,7 @@ import java.util.regex.Pattern;
  */
 public final class JobStatus {
     private static final String TAG = "JobScheduler.JobStatus";
-    static final boolean DEBUG = JobSchedulerService.DEBUG;
+    static final boolean DEBUG = Log.isLoggable(TAG, Log.DEBUG);;
 
     private static MessageDigest sMessageDigest;
     /** Cache of namespace to hash to reduce how often we need to generate the namespace hash. */
@@ -398,7 +399,7 @@ public final class JobStatus {
     private GrantedUriPermissions uriPerms;
     private boolean prepared;
 
-    static final boolean DEBUG_PREPARE = true;
+    static final boolean DEBUG_PREPARE = DEBUG;
     private Throwable unpreparedPoint = null;
 
     /**

@@ -11677,7 +11677,7 @@ public class Notification implements Parcelable
         /**
          * @hide
          */
-        public static final boolean DEBUG_NEW_ACTION_LAYOUT = true;
+        public static final boolean DEBUG_NEW_ACTION_LAYOUT = Log.isLoggable(TAG, Log.DEBUG);;
 
         /**
          * @hide

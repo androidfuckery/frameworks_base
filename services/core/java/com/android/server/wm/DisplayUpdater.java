@@ -26,6 +26,7 @@ import android.annotation.NonNull;
 import android.annotation.Nullable;
 import android.graphics.Rect;
 import android.hardware.display.DisplayManager;
+import android.util.Log;
 import android.util.Slog;
 import android.util.SparseArray;
 import android.view.Display;
@@ -41,12 +42,9 @@ import java.util.List;
  * and applying these changes to WindowManager hierarchy
  */
 class DisplayUpdater {
-
-    // TODO: b/448471638 - disable by default after rolling out to nextfood
-    // Verbose logging is currently enabled to debug potential issues during development
-    private static final boolean DEBUG = true;
-
     private static final String TAG = "DisplayUpdater";
+
+    private static final boolean DEBUG = Log.isLoggable(TAG, Log.DEBUG);
 
     private final RootWindowContainer mRootWindowContainer;
     private final DisplayUnblocker mDisplayUnblocker;
@@ -125,9 +123,9 @@ class DisplayUpdater {
 
     private List<DisplayChange> applyDisplayInfos(Transition transition,
             SparseArray<DisplayInfo> newDisplayInfos) {
-        StringBuilder debugLog;
+        StringBuilder debugLog = new StringBuilder();
         if (DEBUG) {
-            debugLog = new StringBuilder("applyDisplayInfos: applying changes for transition #"
+            debugLog.append("applyDisplayInfos: applying changes for transition #"
                     + transition.getSyncId() + ":\n");
         }
 
